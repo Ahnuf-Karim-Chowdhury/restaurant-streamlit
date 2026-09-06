@@ -115,12 +115,13 @@ with c4:
 st.subheader("Restaurant locations")
 map_df = filtered.dropna(subset=["Latitude_restaurant", "Longitude_restaurant"]).drop_duplicates("Restaurant_ID")
 if len(map_df):
-    fig = px.scatter_mapbox(
+    fig = px.scatter_map(
         map_df, lat="Latitude_restaurant", lon="Longitude_restaurant",
         hover_name="Name", hover_data=["Cuisine", "Price", "City_restaurant"],
         color="Overall_Rating", color_continuous_scale="RdYlGn", zoom=4, height=500,
+        map_style="carto-positron",
     )
-    fig.update_layout(mapbox_style="carto-positron", margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     st.plotly_chart(fig, use_container_width=True)
 else:
     st.info("No restaurants match the current filters.")
