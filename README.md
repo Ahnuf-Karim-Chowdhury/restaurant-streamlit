@@ -22,8 +22,3 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy for free on Streamlit Community Cloud
-1. Push this folder to a new **public** GitHub repo (include the `data/` folder, `app.py`, and `requirements.txt`).
-2. Go to https://share.streamlit.io and sign in with GitHub.
-3. Click **New app** → select your repo/branch → set main file to `app.py`.
-4. Click **Deploy**. You'll get a free public URL like `yourname-restaurant-ratings.streamlit.app`.
